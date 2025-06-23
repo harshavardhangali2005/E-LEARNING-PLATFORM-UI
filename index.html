@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>E-Learning Platform</title>
+  <link rel="stylesheet" href="style1.css" />
+</head>
+<body>
+  <header>
+    <h1>📚 Welcome to E-Learning</h1>
+    <p>Start learning today. Track your progress as you go!</p>
+  </header>
+
+  <h2>🎓 Available Courses</h2>
+  <div class="courses-container">
+    <div class="course-card">
+      <h3>Web Development Basics</h3>
+      <p>Learn HTML, CSS & JavaScript from scratch.</p>
+      <a href="courses.html?course=web" class="start-btn">Start Course</a>
+      <div id="progress-web" class="progress">Progress: 0%</div>
+    </div>
+
+    <div class="course-card">
+      <h3>Python for Beginners</h3>
+      <p>Master Python programming fundamentals.</p>
+      <a href="courses.html?course=python" class="start-btn">Start Course</a>
+      <div id="progress-python" class="progress">Progress: 0%</div>
+    </div>
+
+    <div class="course-card">
+      <h3>AI & Machine Learning</h3>
+      <p>Dive into ML, data, and neural networks.</p>
+      <a href="courses.html?course=ai" class="start-btn">Start Course</a>
+      <div id="progress-ai" class="progress">Progress: 0%</div>
+    </div>
+  </div>
+
+  <script>
+    function updateProgress(id, key, totalSeconds) {
+      const watched = localStorage.getItem(key);
+      const percent = watched ? Math.min(100, Math.floor((watched / totalSeconds) * 100)) : 0;
+      document.getElementById(id).textContent = `Progress: ${percent}%`;
+    }
+
+    updateProgress("progress-web", "progress_web", 600);
+    updateProgress("progress-python", "progress_python", 900);
+    updateProgress("progress-ai", "progress_ai", 1200);
+  </script>
+</body>
+</html>
