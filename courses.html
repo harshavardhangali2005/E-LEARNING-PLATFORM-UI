@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Course Player</title>
+  <link rel="stylesheet" href="style1.css">
+  <script src="https://www.youtube.com/iframe_api"></script>
+</head>
+<body>
+  <header>🎥 Course Video</header>
+  <h2 id="course-title">Loading...</h2>
+  <div id="player-container" style="padding: 20px;"></div>
+  <p><a href="progress.html">Check Progress</a></p>
+  <p><a href="index.html">Back to Home</a></p>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const course = urlParams.get('course');
+
+    const courseData = {
+      web: {
+        title: "Web Development Basics",
+        videoId: "UB1O30fR-EE"
+      },
+      python: {
+        title: "Python for Beginners",
+        videoId: "_uQrJ0TkZlc"
+      },
+      ai: {
+        title: "AI & Machine Learning",
+        videoId: "aircAruvnKk"
+      }
+    };
+
+    let player;
+    let watchedSeconds = 0;
+    let interval;
+    const progressKey = `progress_${course}`;
+
+    function onYouTubeIframeAPIReady() {
+      const selected = courseData[course];
+      if (!selected) return;
+
+      document.getElementById("course-title").textContent = selected.title;
+
+      player = new YT.Player('player-container', {
+        height: '405',
+        width: '720',
+        videoId: selected.videoId,
+        events: {
+          onStateChange: onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerStateChange(event) {
+      if (event.data === YT.PlayerState.PLAYING) {
+        interval = setInterval(() => {
+          watchedSeconds++;
+          localStorage.setItem(progressKey, watchedSeconds);
+        }, 1000);
+      } else {
+        clearInterval(interval);
+      }
+    }
+
+    window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
+  </script>
+</body>
+</html>

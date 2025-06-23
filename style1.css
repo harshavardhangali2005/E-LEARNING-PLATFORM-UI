@@ -1,0 +1,49 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f4ea;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  background: #222;
+  color: white;
+  padding: 20px;
+}
+
+h2 {
+  margin-top: 30px;
+}
+
+.courses-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px auto;
+  flex-wrap: wrap;
+}
+
+.course-card {
+  background: #fff3cc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px #ccc;
+  width: 250px;
+}
+
+.start-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: orange;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+.progress {
+  color: green;
+  font-weight: bold;
+}
