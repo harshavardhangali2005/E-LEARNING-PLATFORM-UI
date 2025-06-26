@@ -15,6 +15,7 @@
 ## Task Description: E-Learning Platform UI**
 
 *1. What the Task Is*
+
 This task involves the design and development of the *User Interface (UI) for an E-Learning Platform*—a web-based educational environment where users can browse courses, enroll, study, and track their learning progress. The primary objective of this task is to create a visually appealing, user-friendly, and responsive UI that enhances the learning experience for students and simplifies course management for instructors.
 
 The interface is structured to mimic real-world e-learning platforms such as Coursera, Udemy, or Khan Academy, offering intuitive navigation and modern design. Key pages include the homepage, course catalog, course details, user dashboard, login/signup screens, and admin/instructor panels. Each screen is designed with clarity and accessibility in mind, ensuring users can interact with the platform easily on both desktop and mobile devices.
