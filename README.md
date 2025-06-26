@@ -12,7 +12,7 @@
 
 *MENTOR*: NEELA SANTOSH
 
-## Task Description: E-Learning Platform UI**
+##Task Description: E-Learning Platform UI**
 
 *1. What the Task Is*
 
